@@ -1,0 +1,44 @@
+name: Build Image
+
+on:
+  push:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        submodules: 'recursive'
+
+    - name: Install build tools
+      run: |
+        sudo apt update
+        sudo apt install -y --no-install-recommends \
+          git sed make binutils build-essential \
+          diffutils gcc g++ bash patch gzip bzip2 \
+          perl tar cpio unzip rsync file bc wget \
+          findutils lsb-release python3
+        sudo apt clean
+        sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+    - name: Build image
+      run: |
+        pushd buildroot
+        make BR2_EXTERNAL=../ O=../out raspberrypi4_64_custom_defconfig
+        make O=../out 2>&1 | tail -1500
+        popd
+        ls -lah out/images
+
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: image
+        path: out/images/sdcard.img
+        if-no-files-found: 'error'
+        retention-days: 15
