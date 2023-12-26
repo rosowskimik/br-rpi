@@ -6,10 +6,16 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-
+  before:
     runs-on: ubuntu-latest
+    steps:
+      - name: Skip ckech
+        if: "! contains(github.event.head_commit.message, '[skip ci]')"
+        run: echo "Skip job"
 
+  build:
+    runs-on: ubuntu-latest
+    needs: before
     steps:
     - name: Checkout
       uses: actions/checkout@v4
