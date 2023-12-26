@@ -9,7 +9,7 @@ jobs:
   before:
     runs-on: ubuntu-latest
     steps:
-      - name: Skip ckech
+      - name: Skip check
         if: "! contains(github.event.head_commit.message, '[skip ci]')"
         run: echo "Skip job"
 
