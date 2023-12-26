@@ -37,7 +37,7 @@ jobs:
       run: |
         pushd buildroot
         make BR2_EXTERNAL=../ O=../out raspberrypi4_64_custom_defconfig
-        make O=../out 2>&1 | tail -1500
+        make -j`nproc` O=../out 2>&1 | tail -500 || make O=../out 2>&1 | tail -1500
         popd
         ls -lah out/images
 
