@@ -1,0 +1,2 @@
+# <username>        <uid>       <group>     <gid>       <password>      <home>      <shell>     <groups>        <comment>
+rpi                 -2          rpi         -2          =test1234       /home/rpi   /bin/bash   sudo            SSH user
