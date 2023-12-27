@@ -33,6 +33,11 @@ jobs:
         sudo apt clean
         sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+    - name: Setup user password
+      env:
+        BR_PASSWORD: ${{ secrets.BR_PASSWORD }}
+      run: sed -i "s/=test1234/$BR_PASSWORD/" board/raspberrypi/users.txt
+
     - name: Build image
       run: |
         pushd buildroot
