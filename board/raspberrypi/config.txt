@@ -36,3 +36,7 @@ dtoverlay=disable-bt
 
 # Disable WiFi
 dtoverlay=disable-wifi
+
+# Setup LEDs
+dtoverlay=gpio-led,gpio=5,label=red:user
+dtoverlay=gpio-led,gpio=6,label=green:user
