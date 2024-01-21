@@ -1,0 +1,19 @@
+# default configuration for card reader
+
+# netowork config
+network:
+  # interface used for connection
+  interface: eth0
+  # api hostname to connect to
+  hostname: localhost
+
+# hardware config
+periph:
+  leds:
+    red_name: red:user
+    green_name: green:user
+  reader:
+    strength: 5
+    timeout: 7s
+  movement:
+    timeout: 20s

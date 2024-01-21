@@ -1,0 +1,14 @@
+config BR2_PACKAGE_CARD_READER
+        bool "card_reader"
+        help
+          Card Reader App
+
+if BR2_PACKAGE_CARD_READER
+
+config BR2_PACKAGE_CARD_READER_HOSTNAME
+        string "API hostname"
+        default "localhost"
+        help
+          API hostname to connect to
+
+endif
