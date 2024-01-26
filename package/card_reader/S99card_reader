@@ -1,6 +1,8 @@
 #!/bin/sh
 #
-# card_reader        Starts card_reader service.
+# Card Reader
+#
+# Starts card_reader service.
 #
 
 DAEMON="card_reader"
