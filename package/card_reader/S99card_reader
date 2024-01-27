@@ -9,7 +9,7 @@ DAEMON="card_reader"
 PIDFILE="/var/run/$DAEMON.pid"
 
 start() {
-    printf 'Starting %s ': "$DAEMON"
+    printf 'Starting %s: ' "$DAEMON"
     start-stop-daemon \
         --start \
         --make-pidfile \
