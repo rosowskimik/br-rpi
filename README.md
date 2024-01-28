@@ -1,7 +1,7 @@
 # Card Reader Image
 Student project for IOT - Door locking device
 
-![Preview](data/preview.mp4)
+https://github.com/rosowskimik/br-rpi/assets/49301780/bcf78c8d-c8d9-40ab-a891-854381e61345
 
 ## Description
 This is the central repository containing external tree for Buildroot
@@ -74,7 +74,6 @@ RaspberryPi [pinout reference](https://pinout.xyz)
 
 * Green LED
   - connected to header 31 (`GPIO 6`)
-
 
 *NOTE*: While this specific configuration describes RaspberryPi4,
 since we're using RPIs native `config.txt` file for DeviceTree overlays,
