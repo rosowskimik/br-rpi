@@ -1,0 +1,63 @@
+config BR2_PACKAGE_CARD_READER
+        bool "card_reader"
+        help
+          Card Reader App
+
+if BR2_PACKAGE_CARD_READER
+
+config BR2_PACKAGE_CARD_READER_INIT_LOCKED
+        bool "Init locked"
+        help
+          Initial state for the lock that's set during startup
+
+config BR2_PACKAGE_CARD_READER_SYSTEM_ID
+        string "System ID"
+        help
+          Id used for communication with API
+
+config BR2_PACKAGE_CARD_READER_INTERFACE
+        string "Network interface"
+        default "eth0"
+        help
+          Interface name to use for identification
+
+config BR2_PACKAGE_CARD_READER_HOSTNAME
+        string "API hostname"
+        default "localhost"
+        help
+          API hostname to connect to
+
+config BR2_PACKAGE_CARD_READER_RED_LED
+        string "Red LED name"
+        default "red:user"
+        help
+          Sysfs LED entry name for red led
+
+config BR2_PACKAGE_CARD_READER_GREEN_LED
+        string "Green LED name"
+        default "green:user"
+        help
+          Sysfs LED entry name for green led
+
+config BR2_PACKAGE_CARD_READER_STRENGTH
+        int "Antenna strength"
+        range 1 7
+        default 5
+        help
+          Antenna strength to use for RFID receiver
+
+config BR2_PACKAGE_CARD_READER_CARD_TIMEOUT
+        string "Card reader timeout"
+        default "5s"
+        help
+          How long should the app ignore card reader events
+          after rejecting a card
+
+config BR2_PACKAGE_CARD_READER_MOVEMENT_TIMEOUT
+        string "Movement sensor timeout"
+        default "20s"
+        help
+          How long the app should wait for no movement
+          before triggering another movement event
+
+endif

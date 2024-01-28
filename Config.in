@@ -1,0 +1,1 @@
+source "$BR2_EXTERNAL_RPI_PATH/package/card_reader/Config.in"

@@ -1,0 +1,24 @@
+# default configuration for card reader
+
+# initial lock state
+init_locked: @INIT_LOCKED@
+
+# netowork config
+network:
+  # system id
+  id: @SYSTEM_ID@
+  # interface used for connection
+  interface: @INTERFACE@
+  # api hostname to connect to
+  hostname: @HOSTNAME@
+
+# hardware config
+periph:
+  leds:
+    red_name: @RED_LED@
+    green_name: @GREEN_LED@
+  reader:
+    strength: @STRENGTH@
+    timeout: @CARD_TIMEOUT@
+  movement:
+    timeout: @MOVEMENT_TIMEOUT@
