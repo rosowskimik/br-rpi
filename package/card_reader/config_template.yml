@@ -5,6 +5,8 @@ init_locked: @INIT_LOCKED@
 
 # netowork config
 network:
+  # system id
+  id: @SYSTEM_ID@
   # interface used for connection
   interface: @INTERFACE@
   # api hostname to connect to

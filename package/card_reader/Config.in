@@ -10,6 +10,11 @@ config BR2_PACKAGE_CARD_READER_INIT_LOCKED
         help
           Initial state for the lock that's set during startup
 
+config BR2_PACKAGE_CARD_READER_SYSTEM_ID
+        string "System ID"
+        help
+          Id used for communication with API
+
 config BR2_PACKAGE_CARD_READER_INTERFACE
         string "Network interface"
         default "eth0"
