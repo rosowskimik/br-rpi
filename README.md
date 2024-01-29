@@ -82,7 +82,7 @@ periph:
 ## Configuration
 
 ### Software
-A custom Linux kernel configuration is used to minimize resource usage.
+A custom Linux [kernel configuration](board/raspberrypi/kernel.config) is used to minimize resource usage.
 
 Most of the hardware configuration is done through custom [config.txt](board/raspberrypi/config.txt). Most notably:
 * we [enable the SPI](board/raspberrypi/config.txt#L28) interface
